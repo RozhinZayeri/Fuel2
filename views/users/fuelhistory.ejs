@@ -1,0 +1,79 @@
+<% layout('layouts/boilerplate')%>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+	table {
+		width: 100%;
+	}
+	th, td {
+		padding: 10px;
+	}
+
+	body {
+		font-family: helvetica;
+	}
+	
+	#t01 tr:nth-child(even) {
+  		background-color: #F4F4F4;
+	}
+	#t01 tr:nth-child(odd) {
+ 		background-color: #FFF6D1;
+	}
+	#t01 th {
+  		background-color: black;
+  		color: white;
+		}
+  </style>
+
+  <title>Fuel!</title>
+  </head>
+  <body>
+    <h1>Fuel!</h1>
+    <h2><em>Account Past Quotes</em></h2>
+
+      <table id="t01">
+	<caption style="text-align: left"><b>Account Number:</b> 09123812</caption>
+        <tr>
+          <th>Delivery Date</th>
+          <th>Delivery Address</th>
+          <th>Gallons Requested</th>
+          <th>Suggested Price</th>
+          <th>Total Amount Due</th>
+        </tr>
+	<tr>
+	   <td>5/10/20</td>
+	   <!-- <td>742 Evergreen Terrace, Springfield, IL 61348</td> -->
+		<td><%= user.street %></td>
+           <td>170</td>
+           <td>2.76</td>
+	   <td>469.20</td>
+	</tr>
+	<tr>
+	   <td>6/10/20</td>
+	   <!-- <td>1410 Museum Campus Dr, Chicago, IL 60605</td> -->
+		<td><%= user.street2 %></td>
+           <td>240</td>
+           <td>5.21</td>
+	   <td>1250.40</td>
+	</tr>
+	<tr>
+	   <td>7/10/20</td>
+	   <td>742 Evergreen Terrace, Springfield, IL 61348</td>
+           <td>2140</td>
+           <td>4.20</td>
+	   <td>8988.00</td>
+	</tr>
+	<tr>
+	   <td>8/10/20</td>
+	   <td>1410 Museum Campus Dr, Chicago, IL 60605</td>
+           <td>1240</td>
+           <td>4.69</td>
+	   <td>5815.60</td>
+	</tr>
+      </table>
+  </body>
+
+</html>
