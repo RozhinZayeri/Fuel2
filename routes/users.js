@@ -26,10 +26,6 @@ router.get('/logout', users.logout)
 
 
 
-
-
-
-
 //===============================================jadid
 
 // User profile

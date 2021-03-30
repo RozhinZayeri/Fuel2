@@ -6,16 +6,15 @@
   "scripts": {
     "test": "nyc mocha",
     "start": "node app.js",
-	"coverage": "nyc npm run test"
+    "coverage": "nyc npm run test"
   },
-	"nyc": {
-		"all": true,
-  		"include": [
-    		"test/**.js"
-  			],
-  		"exclude": [
-  			]
-	},
+  "nyc": {
+    "all": true,
+    "include": [
+      "test/**.js"
+    ],
+    "exclude": []
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -52,12 +51,14 @@
     "passport-local-mongoose": "^6.0.1",
     "path": "^0.12.7",
     "sanitize-html": "^1.27.4",
+    "sinon": "^10.0.0",
     "trim": "^1.0.0",
     "util": "^0.12.3"
   },
   "devDependencies": {
     "chai": "^4.3.4",
     "mocha": "^8.3.2",
+    "mocha-sinon": "^2.1.2",
     "nyc": "^15.1.0"
   }
 }

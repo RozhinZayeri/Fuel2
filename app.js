@@ -139,6 +139,7 @@ app.use((err, req, res, next) => {
 // 		get total(){
 // 			return this.rate * this.gallons; 
 // 		}
+// 
 // }
 
 
