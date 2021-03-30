@@ -3,35 +3,11 @@ const Schema = mongoose.Schema;
 const passportLocalMongoose = require('passport-local-mongoose');
 
 const UserSchema = new Schema({
-    email: {
-        type: String,
-        // required: true,
-        // unique: true
-    },
-	age: {
-		 type: String
-        // required: true,
-        // unique: true
-},
+
 	fullname:
 	{
 		type: String,
 	},
-	
-    // address: {
-
-    //     street: String,
-
-    //     city: String,
-
-    //     state: String,
-
-    //     zip: Number
-
-    // }
-	
-
-
         street: 
 		{	type: String },
 
@@ -57,10 +33,12 @@ const UserSchema = new Schema({
 
         zipcode2:{
 			
-		type: Number}
-
-
+		type: Number},
 	
+	
+		quotes: {
+			type: String
+		}	
 });
 
 UserSchema.plugin(passportLocalMongoose);

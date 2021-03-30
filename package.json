@@ -1,12 +1,21 @@
 {
-  "name": "yelpcamp",
+  "name": "FuelP",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "test": "nyc mocha",
+    "start": "node app.js",
+	"coverage": "nyc npm run test"
   },
+	"nyc": {
+		"all": true,
+  		"include": [
+    		"test/**.js"
+  			],
+  		"exclude": [
+  			]
+	},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -45,5 +54,10 @@
     "sanitize-html": "^1.27.4",
     "trim": "^1.0.0",
     "util": "^0.12.3"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2",
+    "nyc": "^15.1.0"
   }
 }

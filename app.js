@@ -18,10 +18,8 @@ const mongoSanitize = require('express-mongo-sanitize');
 const userRoutes = require('./routes/users');
 
 const favicon = require('favicon');
+
 const MongoDBStore = require("connect-mongo")(session);
-
-
-
 const dbUrl = process.env.DB_URL;
 
 mongoose.connect(dbUrl, {
