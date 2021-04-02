@@ -4,14 +4,13 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "nyc mocha",
-    "start": "node app.js",
-    "coverage": "nyc npm run test"
+    "test": "nyc mocha || true",
+    "start": "node app.js"
   },
   "nyc": {
     "all": true,
     "include": [
-      "test/**.js"
+      "**/*.js"
     ],
     "exclude": []
   },
@@ -24,6 +23,7 @@
     "access-token": "^0.2.2",
     "async-error-handler": "^1.0.7",
     "body-parser": "^1.19.0",
+    "chai-dom": "^1.9.0",
     "cloudinary": "^1.23.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^3.2.0",
@@ -57,6 +57,8 @@
   },
   "devDependencies": {
     "chai": "^4.3.4",
+    "jsdom": "16.5.2",
+    "jsdom-global": "3.0.2",
     "mocha": "^8.3.2",
     "mocha-sinon": "^2.1.2",
     "nyc": "^15.1.0"
