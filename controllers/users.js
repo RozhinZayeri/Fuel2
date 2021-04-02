@@ -2,8 +2,11 @@ const User = require('../models/user');
 
 module.exports.renderRegister = (req, res) => {
     res.render('users/register');
+	console.log('renderRegister function worked');
 }
 
+
+//function below already has error handling
 module.exports.register = async (req, res, next) => {
     try {
         const { email, username, password } = req.body;

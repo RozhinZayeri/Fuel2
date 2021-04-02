@@ -1,12 +1,16 @@
 const ExpressError = require('./utils/ExpressError');
 const User = require('./models/user');
 
-// module.exports = {
-// 	sayHello: function(){
-// 		console.log('hello');
-// 		// return 'hello';
-// 	} 
-// }
+module.exports = {
+	errorTest: function(){
+		console.log('express error handling');
+		// return 'hello';
+	} 
+}
+
+
+//CANNOT TEST THIS FILE BECAUSE OF USE OF OUTSIDE EXPRESS PACKAGES LIKE ISAUTHENTICATED AND USERSCHEMA 
+//BUT EACH FUNCTION INCLUDES ITS OWN ERROR HANDLING ESPECIALLY WITH THE EXPRESS ERROR HANDLING PACKAGE
 
 module.exports.isLoggedIn = (req, res, next) => {
 	if (!req.isAuthenticated()) {
@@ -19,7 +23,8 @@ module.exports.isLoggedIn = (req, res, next) => {
 
 
 module.exports.validateUser = (req, res, next) => {
-    const { error } = userSchema.validate(req.body);
+    // console.log('hello');
+	const { error } = userSchema.validate(req.body);
     console.log(req.body);
     if (error) {
         const msg = error.details.map(el => el.message).join(',')

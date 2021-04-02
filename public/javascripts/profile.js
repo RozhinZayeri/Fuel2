@@ -1,10 +1,14 @@
 let newPasswordValue;
 let confirmationValue;
+
 const submitBtn = document.getElementById('update-profile');
 const newPassword = document.getElementById('new-password');
 const confirmation = document.getElementById('password-confirmation');
 const validationMessage = document.getElementById('validation-message');
+
+
 function validatePasswords(message, add, remove) {
+		console.log('function works');
 		validationMessage.textContent = message;
 		validationMessage.classList.add(add);
 		validationMessage.classList.remove(remove);

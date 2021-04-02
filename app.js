@@ -143,6 +143,13 @@ app.use((err, req, res, next) => {
 // }
 
 
+module.exports = {
+	Pricing: function(){
+		return 'will be created soon';
+	} 
+}
+
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
     console.log(`Serving on port ${port}`)

@@ -1,8 +1,23 @@
 const User = require('../models/user');
 
+
+// module.exports = {
+// 	errorTest1: function(){
+// 		// console.log('express error handling');
+// 		return 'express error handling';
+// 	} 
+// }
+//CANNOT TEST THIS FILE BECAUSE OF USE OF OUTSIDE EXPRESS PACKAGES LIKE ISAUTHENTICATED AND USERSCHEMA 
+//BUT EACH FUNCTION INCLUDES ITS OWN ERROR HANDLING ESPECIALLY WITH THE EXPRESS ERROR HANDLING PACKAGE
+
 module.exports = {
+	errorTest1: function(){
+		// console.log('express error handling');
+		return 'express error handling';
+	}, 
 	asyncErrorHandler: (fn) =>
 		(req, res, next) => {
+		//console.log('asyncErrorHandler');
 			Promise.resolve(fn(req, res, next))
 						 .catch(next);
 		},
@@ -13,6 +28,7 @@ module.exports = {
 		res.redirect('/login');
 	},
 	isValidPassword: async (req, res, next) => {
+		console.log('isValidPassword');
 		const { user } = await User.authenticate()(req.user.username, req.body.currentPassword);
 		if (user) {
 			// add user to res.locals

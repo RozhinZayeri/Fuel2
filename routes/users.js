@@ -13,6 +13,18 @@ const {
 
 
 
+// module.exports = {
+// 	errorTest: function(){
+// 		console.log('express error handling');
+// 		// return 'hello';
+// 	} 
+// }
+
+
+//CANNOT TEST THIS FILE BECAUSE NONE OF THESE FUNCTIONS HAVE NAMES, ALL GET AND PUT
+//BUT EACH FUNCTION INCLUDES ITS OWN ERROR HANDLING
+
+
 router.route('/register')
     .get(users.renderRegister)
     .post(catchAsync(users.register));
@@ -218,7 +230,13 @@ router.put("/:id", isLoggedIn, (req, res) => {
 
 
 
-
+// module.exports = {
+// 	errorTest2: function(){
+// 		console.log('express error handling');
+// 		// return 'hello';
+// 	}
+// 	// router,
+// }
 module.exports = router;
 
 

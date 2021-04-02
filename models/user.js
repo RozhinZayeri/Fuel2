@@ -43,4 +43,11 @@ const UserSchema = new Schema({
 
 UserSchema.plugin(passportLocalMongoose);
 
+module.exports = {
+	errorTest1: function(){
+		// console.log('express error handling');
+		return 'express error handling';
+	}
+}
+
 module.exports = mongoose.model('User', UserSchema);
