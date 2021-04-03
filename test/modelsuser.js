@@ -1,14 +1,14 @@
-// var mongoose = require('mongoose');
-// const assert = require('chai').assert;
-// var expect = require('chai').expect;
+var mongoose = require('mongoose');
+const assert = require('chai').assert;
+var expect = require('chai').expect;
 // var User = require('../models/user');
-// const errorTest = require('../models/user.js').errorTest;
-// require('mocha-sinon');
+const User = require('../models/user');
+require('mocha-sinon');
 
 // describe('errorTest1', function(){
-// 	it('middleware index', function(){
-// 		let x = errorTest1();
-// 		assert.equal(x, 'express error handling');
+// 	it('models user', function(){
+// 		let x = User.errorTest1();
+// 		assert.typeOf(x, 'string');
 // 	});
 // });
 

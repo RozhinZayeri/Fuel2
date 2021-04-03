@@ -1,6 +1,19 @@
 const User = require('../models/user');
 
+// module.exports = {
+// 	errorTest1: function(){
+// 		// console.log('express error handling');
+// 		return 'express error handling';
+// 	}
+// }
+
+// will not let me test as it does not recognize the functions
+// for example, tried to test renderRegister and it did not recognize the function
+
+
+
 module.exports.renderRegister = (req, res) => {
+	//console.log('express error handling');
     res.render('users/register');
 	console.log('renderRegister function worked');
 }

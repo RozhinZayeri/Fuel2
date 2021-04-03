@@ -1,3 +1,10 @@
+module.exports = {
+	errorTest1: function(){
+		// console.log('express error handling');
+		return 'express error handling';
+	}
+}
+
 (function () {
     'use strict'
 

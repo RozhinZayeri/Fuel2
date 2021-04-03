@@ -12,6 +12,12 @@ const {
 } = require('../middleware');
 
 
+// module.exports = {
+// 	errorTest1: function(){
+// 		// console.log('express error handling');
+// 		return 'express error handling';
+// 	}
+// }
 
 // module.exports = {
 // 	errorTest: function(){
@@ -25,22 +31,22 @@ const {
 //BUT EACH FUNCTION INCLUDES ITS OWN ERROR HANDLING
 
 
-router.route('/register')
-    .get(users.renderRegister)
-    .post(catchAsync(users.register));
+// router.route('/register')
+//     .get(users.renderRegister)
+//     .post(catchAsync(users.register));
 
-router.route('/login')
-    .get(users.renderLogin)
-    .post(passport.authenticate('local', { failureFlash: true, failureRedirect: '/login' }), users.login)
+// router.route('/login')
+//     .get(users.renderLogin)
+//     .post(passport.authenticate('local', { failureFlash: true, failureRedirect: '/login' }), users.login)
 
-router.get('/logout', users.logout)
-
-
+// router.get('/logout', users.logout)
 
 
-//===============================================jadid
 
-// User profile
+
+// //===============================================jadid
+
+// // User profile
 router.get("/users/:id", isLoggedIn, (req, res) => {
   User.findById(req.params.id, (err, foundUser) => {
     if (err || !foundUser) {

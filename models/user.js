@@ -2,6 +2,21 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const passportLocalMongoose = require('passport-local-mongoose');
 
+// module.exports = {
+// 	errorTest1: function(){
+// 		// console.log('express error handling');
+// 		return 'express error handling';
+// 	}
+// }
+
+
+	// function errorTest1(){
+	// 	// console.log('express error handling');
+	// 	return 'express error handling';
+	// }
+
+
+
 const UserSchema = new Schema({
 
 	fullname:
@@ -42,12 +57,5 @@ const UserSchema = new Schema({
 });
 
 UserSchema.plugin(passportLocalMongoose);
-
-module.exports = {
-	errorTest1: function(){
-		// console.log('express error handling');
-		return 'express error handling';
-	}
-}
 
 module.exports = mongoose.model('User', UserSchema);
