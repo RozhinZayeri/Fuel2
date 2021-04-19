@@ -20,8 +20,8 @@ const userRoutes = require('./routes/users');
 const favicon = require('favicon');
 
 const MongoDBStore = require("connect-mongo")(session);
-const dbUrl = process.env.DB_URL;
-
+// const dbUrl = process.env.DB_URL;
+const dbUrl = 'mongodb+srv://buckle:BbNKZBtXkIH7FKa0@cluster0.ufnzz.mongodb.net/fuel5?retryWrites=true&w=majority';
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useCreateIndex: true,
