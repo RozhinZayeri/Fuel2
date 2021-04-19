@@ -11,6 +11,7 @@ To run the test you need to type "npm test"
 
 In case you couldn't run the code PLEASE contact us on teams or email or on the blackboard in order for us to meet and share our screen to show you our IDE and run everything for you. 
 
+Feel free to access the website using this URL at any time to test the functionality of the website. (https://limitless-dawn-39765.herokuapp.com/).
 
 BEST,
 Group 5.
