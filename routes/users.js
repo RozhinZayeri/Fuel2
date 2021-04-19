@@ -31,15 +31,15 @@ const {
 //BUT EACH FUNCTION INCLUDES ITS OWN ERROR HANDLING
 
 
-// router.route('/register')
-//     .get(users.renderRegister)
-//     .post(catchAsync(users.register));
+router.route('/register')
+    .get(users.renderRegister)
+    .post(catchAsync(users.register));
 
-// router.route('/login')
-//     .get(users.renderLogin)
-//     .post(passport.authenticate('local', { failureFlash: true, failureRedirect: '/login' }), users.login)
+router.route('/login')
+    .get(users.renderLogin)
+    .post(passport.authenticate('local', { failureFlash: true, failureRedirect: '/login' }), users.login)
 
-// router.get('/logout', users.logout)
+router.get('/logout', users.logout)
 
 
 

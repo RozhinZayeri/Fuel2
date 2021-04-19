@@ -19,12 +19,12 @@ require('mocha-sinon');
 	
 // });
 
-describe('errorTest1', function(){
-	it('middleware index', function(){
-		let x = errorTest1();
-		assert.equal(x, 'express error handling');
-	});
-});
+// describe('errorTest1', function(){
+// 	it('middleware index', function(){
+// 		let x = errorTest1();
+// 		assert.equal(x, 'express error handling');
+// 	});
+// });
 
 // describe('errorTest1', function() {
 

@@ -5,12 +5,12 @@ var expect = require('chai').expect;
 const User = require('../public/javascripts/profile.js');
 require('mocha-sinon');
 
-describe('errorTest1', function(){
-	it('validateForms', function(){
-		let x = User.errorTest1();
-		assert.typeOf(x, 'string');
-	});
-});
+// describe('errorTest1', function(){
+// 	it('validateForms', function(){
+// 		let x = User.errorTest1();
+// 		assert.typeOf(x, 'string');
+// 	});
+// });
 
 
 // const { expect } = require('chai');

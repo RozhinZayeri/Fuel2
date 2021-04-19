@@ -15,7 +15,7 @@ const User = require('../models/user');
 module.exports.renderRegister = (req, res) => {
 	//console.log('express error handling');
     res.render('users/register');
-	console.log('renderRegister function worked');
+	// console.log('renderRegister function worked');
 }
 
 

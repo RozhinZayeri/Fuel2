@@ -17,16 +17,16 @@ require('mocha-sinon');
 // 	});
 // });
 
-describe('errorTest', function() {
+// describe('errorTest', function() {
 
-  beforeEach(function() {
-    this.sinon.stub(console, 'log');
-  });
+//   beforeEach(function() {
+//     this.sinon.stub(console, 'log');
+//   });
 
-  it('express error handling', function() {
-    errorTest();
-    expect( console.log.calledOnce ).to.be.true;
-    expect( console.log.calledWith('express error handling') ).to.be.true;
-  });
+//   it('express error handling', function() {
+//     errorTest();
+//     expect( console.log.calledOnce ).to.be.true;
+//     expect( console.log.calledWith('express error handling') ).to.be.true;
+//   });
 	
-});
+// });

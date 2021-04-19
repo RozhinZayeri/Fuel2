@@ -23,10 +23,10 @@ const extension = (joi) => ({
 
 const Joi = BaseJoi.extend(extension)
 
-//Function to test mongodb is in schematest file
-module.exports = {
-	errorTest: function(){
-		console.log('test mongodb in another file');
-		// return 'hello';
-	} 
-}
+// //Function to test mongodb is in schematest file
+// module.exports = {
+// 	errorTest: function(){
+// 		console.log('test mongodb in another file');
+// 		// return 'hello';
+// 	} 
+// }

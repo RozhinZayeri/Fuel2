@@ -53,7 +53,20 @@ const UserSchema = new Schema({
 	
 		quotes: {
 			type: String
-		}	
+		},	
+	
+	TotalAmountDue:{
+		type: String
+	},
+	SuggestedPrice:{
+		type: String
+	},
+	gallons:{
+		type:Number
+	},
+	date:{
+		type:Date
+	}
 });
 
 UserSchema.plugin(passportLocalMongoose);

@@ -1,9 +1,9 @@
-module.exports = {
-	errorTest1: function(){
-		// console.log('express error handling');
-		return 'express error handling';
-	}
-}
+// module.exports = {
+// 	errorTest1: function(){
+// 		// console.log('express error handling');
+// 		return 'express error handling';
+// 	}
+// }
 
 let newPasswordValue;
 let confirmationValue;
@@ -15,7 +15,7 @@ const validationMessage = document.getElementById('validation-message');
 
 
 function validatePasswords(message, add, remove) {
-		console.log('function works');
+		// console.log('function works');
 		validationMessage.textContent = message;
 		validationMessage.classList.add(add);
 		validationMessage.classList.remove(remove);

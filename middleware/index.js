@@ -11,10 +11,10 @@ const User = require('../models/user');
 //BUT EACH FUNCTION INCLUDES ITS OWN ERROR HANDLING ESPECIALLY WITH THE EXPRESS ERROR HANDLING PACKAGE
 
 module.exports = {
-	errorTest1: function(){
-		// console.log('express error handling');
-		return 'express error handling';
-	}, 
+	// errorTest1: function(){
+	// 	// console.log('express error handling');
+	// 	return 'express error handling';
+	// }, 
 	asyncErrorHandler: (fn) =>
 		(req, res, next) => {
 		//console.log('asyncErrorHandler');

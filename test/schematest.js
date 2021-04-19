@@ -1,29 +1,29 @@
-"use strict";
+// "use strict";
 // NPM install mongoose and chai. Make sure mocha is globally
 // installed
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const chai = require('chai');
-const expect = chai.expect;
+// const mongoose = require('mongoose');
+// const Schema = mongoose.Schema;
+// const chai = require('chai');
+// const expect = chai.expect;
 
 
-const errorTest = require('../schemas').errorTest;
-require('mocha-sinon');
+// const errorTest = require('../schemas').errorTest;
+// require('mocha-sinon');
 
 
-describe('errorTest', function() {
+// describe('errorTest', function() {
 
-  beforeEach(function() {
-    this.sinon.stub(console, 'log');
-  });
+//   beforeEach(function() {
+//     this.sinon.stub(console, 'log');
+//   });
 
-  it('test mongodb', function() {
-    errorTest();
-    expect( console.log.calledOnce ).to.be.true;
-    expect( console.log.calledWith('test mongodb in another file') ).to.be.true;
-  });
+//   it('test mongodb', function() {
+//     errorTest();
+//     expect( console.log.calledOnce ).to.be.true;
+//     expect( console.log.calledWith('test mongodb in another file') ).to.be.true;
+//   });
 	
-});
+// });
 
 
 // Create a new schema that accepts a 'name' object.

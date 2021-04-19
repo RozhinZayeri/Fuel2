@@ -1,12 +1,12 @@
 const ExpressError = require('./utils/ExpressError');
 const User = require('./models/user');
 
-module.exports = {
-	errorTest: function(){
-		console.log('express error handling');
-		// return 'hello';
-	} 
-}
+// module.exports = {
+// 	errorTest: function(){
+// 		console.log('express error handling');
+// 		// return 'hello';
+// 	} 
+// }
 
 
 //CANNOT TEST THIS FILE BECAUSE OF USE OF OUTSIDE EXPRESS PACKAGES LIKE ISAUTHENTICATED AND USERSCHEMA 
