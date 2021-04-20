@@ -13,5 +13,8 @@ In case you couldn't run the code PLEASE contact us on teams or email or on the 
 
 Feel free to access the website using this URL at any time to test the functionality of the website. (https://limitless-dawn-39765.herokuapp.com/).
 
+
+Lastly, our default branch is the "master" branch. 
+
 BEST,
 Group 5.
