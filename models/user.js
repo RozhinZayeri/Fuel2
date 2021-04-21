@@ -65,7 +65,8 @@ const UserSchema = new Schema({
 		type:Number
 	},
 	date:{
-		type:Date
+		// type:Date
+		type:String
 	}
 });
 
