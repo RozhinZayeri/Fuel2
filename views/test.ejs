@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html>
-	
-<body>
+<% layout('layouts/boilerplate')%>
 
-<p>Click the button to display an alert box.</p>
+<center>
 
+	Thank you for visiting our website, please click on the link below to update your profile. 
 
-<script>
+</center>
+<center>
 
-  alert("Hello! I am an alert box!");
+	<a href="/users/<%= currentUser._id %>/edit">Click ME!</a>
 
-</script>
-
-</body>
-</html>
+</center>
