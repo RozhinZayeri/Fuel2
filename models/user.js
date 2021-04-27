@@ -67,6 +67,20 @@ const UserSchema = new Schema({
 	date:{
 		// type:Date
 		type:String
+	},
+	
+	TotalAmountDue2:{
+		type: String
+	},
+	SuggestedPrice2:{
+		type: String
+	},
+	gallons2:{
+		type:Number
+	},
+	date2:{
+		// type:Date
+		type:String
 	}
 });
 
