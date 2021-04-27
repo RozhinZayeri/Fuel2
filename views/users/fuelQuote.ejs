@@ -1,94 +1,141 @@
-<% layout('layouts/boilerplate')%>
-<!-- <!doctype html> -->
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+<head>
+<title>FuelQuote</title>
+ <link rel="stylesheet" href="/stylesheets/main1.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+</head>
 
-    <title>Fuel Quote Form</title>
-  </head>
-  <body> 
-<div class="container"> <h1>Fuel Quote Form</h1></div>
+<body onload="load()">
+<%- include('../partials/navbar')%>
+    <main class="container mt-5">
+        <%- include('../partials/flash')%>
 
-<div class="container">
+<div class="outer container" id="outer">
+<div class="boxx" id="address1">
 <form action="/users/<%= user._id %>?_method=PUT" method="POST">
-  <div class="form-group">
-     <label for="gallons">Gallons Requested</label> 
-	  <input type="text" id="gallons" name="user[gallons]" placeholder="Enter Gallons" autocomplete="off" min="1" class="form-control"            placeholder="Enter Gallon Quantity" required>
-  </div>
-	
-  <div class="form-group">
-	  <label for="DeliveryAdress">Delivery Address</label>
-	  <textarea class="form-control" placeholder="street, zip city, state" readonly><%= user.street %></textarea>
-  </div>
-  <label for="date">Delivery Date:</label>
-  <p>
-     <input type="date" id="date" name="user[date]">
-  </p>
-
-  <div class="form-group">
-  	<label for="SuggestedPrice">Suggested Price</label>
-  	<input class="form-control" id="SuggestedPrice" name="user[SuggestedPrice]" type="number" placeholder="Will be calculated" readonly>
-  </div>
-
-
-  <div class="form-group">
-  	<label for="TotalAmountDue">Total Amount Due</label>
-  	<input class="form-control" id="TotalAmountDue" name="user[TotalAmountDue]" type="number" placeholder="Will be calculated" readonly>
-  </div>
-		<br>
-	<button type="submit" class="btn btn-primary">Submit</button>
-	
-</form>
+<strong>Address1:</strong>
+<div class="form-group">
+<label for="gallons">Gallons Requested</label>
+<input type="text" id="gallons" name="user[gallons]" placeholder="Enter Gallons" autocomplete="off" min="1" class="form-control"            placeholder="Enter Gallon Quantity" required>
 </div>
+<div class="form-group">
+<label for="DeliveryAdress">Delivery Address</label>
+<textarea class="form-control" placeholder="street, zip city, state" readonly><%= user.street %></textarea>
+</div>
+<label for="date">Delivery Date:</label>
+<p>
+<input type="date" id="date" name="user[date]">
+</p>
+<div class="form-group">
+<label for="SuggestedPrice">Suggested Price</label>
+<input class="form-control" id="SuggestedPrice" name="user[SuggestedPrice]" type="number" placeholder="Will be calculated" readonly>
+</div>
+<div class="form-group">
+<label for="TotalAmountDue">Total Amount Due</label>
+<input class="form-control" id="TotalAmountDue" name="user[TotalAmountDue]" type="number" placeholder="Will be calculated" readonly>
+</div>
+<br>
+<button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
 
 <br>
-<div class="container"> 
- <form id="form" onsubmit="return false;">
-		 
-		  <div id="quote"></div> 
-	     <input class="btn btn-success" type="submit" value="Get Quote" onclick="getQuote();">
-	
+<div class="container">
+  <form id="form" onsubmit="return false;">
+ <div id="quote"></div>
+    <input class="btn btn-success" type="submit" value="Get Quote" onclick="getQuote();">
+<input class="button" type="button" value="Address2 &nbsp;" onclick="address2()">
 </form>
 </div>
-	  
+</div>
+
+
+
+
+
+<div class="boxx" id="address2">
+<form action="/users/<%= user._id %>?_method=PUT" method="POST">
+<strong>Address2:</strong>
+ <div class="form-group">
+<label for="gallons2">Gallons Requested</label>
+ <input type="text" id="gallons2" name="user[gallons2]" placeholder="Enter Gallons" autocomplete="off" min="1" class="form-control"            placeholder="Enter Gallon Quantity" required>
+ </div>
+ <div class="form-group">
+ <label for="DeliveryAdress">Delivery Address</label>
+ <textarea class="form-control" placeholder="street, zip city, state" readonly><%= user.street2 %></textarea>
+ </div>
+ <label for="date">Delivery Date:</label>
+ <p>
+<input type="date" id="date" name="user[date2]">
+ </p>
+
+ <div class="form-group">
+<label for="SuggestedPrice2">Suggested Price</label>
+<input class="form-control" id="SuggestedPrice2" name="user[SuggestedPrice2]" type="number" placeholder="Will be calculated" readonly>
+ </div>
+ <div class="form-group">
+<label for="TotalAmountDue2">Total Amount Due</label>
+<input class="form-control" id="TotalAmountDue2" name="user[TotalAmountDue2]" type="number" placeholder="Will be calculated" readonly>
+ </div>
+<br>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<br>
+<div class="container">
+<form id="form" onsubmit="return false;">
+<div id="quote"></div>
+<input class="btn btn-success" type="submit" value="Get Quote" onclick="getQuote();">
+<input class="button" type="button" value="Address1 &nbsp;" onclick="address1()">
+</form>
+</div>
+</div>
+</div>
+</main>
 <script>
-	
-var margin = 0;	 
+
+var margin = 0;
 function getMargin() {
 
-	// if from tx 
-	if (("<%= user.state %>") == "TX")
-		margin = .02;
-	else 
-		margin = .04;
-	
-	// if previous customer
-	if ("<%= user.gallons %>")
-		margin -= .01; 
-	
-	// gallons requested over 1000gallons?
-	if(document.getElementById("gallons").value > 1000)
-		margin += .02;
-	else
-		margin += .03;
-	
-	margin += .1;
-	
-	return margin;
+// if from tx
+if (("<%= user.state %>") == "TX")
+// alert("Texas baby");
+margin = .02;
+else
+margin = .04;
+
+//*** I tried to add another if statement for address 2 but it doesnt wrork and it breaks the first one as well. *****
+
+
+
+// if previous customer
+if ("<%= user.gallons %>" || "<%= user.gallons2 %>")
+margin -= .01;
+
+// gallons requested over 1000gallons?
+if(document.getElementById("gallons").value > 1000)
+margin += .02;
+else
+margin += .03;
+
+margin += .1;
+
+return margin;
 }
-		
+
 function getQuote() {
-	
-  var requestedGallons = parseInt(document.getElementById("gallons").value);
+
+var requestedGallons = parseInt(document.getElementById("gallons").value);
+if(isNaN(requestedGallons)) {
+   requestedGallons = parseInt(document.getElementById("gallons2").value);
+  }
+
   var box1 = document.getElementById("quote");
-	
-  
+
   var margin = getMargin();
   margin *= 1.5;
   var suggestedPrice = 1.50 + margin;
-	
+
   if(box1.style.display == "none")
     box1.style.display = "block";
 
@@ -96,18 +143,61 @@ function getQuote() {
     box1.innerText = "hello? real number pls."
     return;
   }
-	
+
   // box1.innerText = "Total Amount Due: $" + (parseInt(requestedGallons) * suggestedPrice).toFixed(2);
   document.getElementById("TotalAmountDue").placeholder = "Total Amount Due: $" + (parseInt(requestedGallons) * suggestedPrice).toFixed(2);
   document.getElementById("SuggestedPrice").placeholder = "Suggested Price: $" + suggestedPrice.toFixed(2);
   document.getElementById("TotalAmountDue").value = (parseInt(requestedGallons) * suggestedPrice).toFixed(2);
   document.getElementById("SuggestedPrice").value = suggestedPrice.toFixed(2);
-}	
+
+
+  document.getElementById("TotalAmountDue2").placeholder = "Total Amount Due: $" + (parseInt(requestedGallons) * suggestedPrice).toFixed(2);
+  document.getElementById("SuggestedPrice2").placeholder = "Suggested Price: $" + suggestedPrice.toFixed(2);
+  document.getElementById("TotalAmountDue2").value = (parseInt(requestedGallons) * suggestedPrice).toFixed(2);
+  document.getElementById("SuggestedPrice2").value = suggestedPrice.toFixed(2);
+}
+
+
+
+
+function load () {
+document.getElementById('address2').style="display:none;";
+document.getElementById('check').value="address2";
+
+}
+function address2 () {
+// document.getElementById("gallons").placeholder = 0;
+document.getElementById("gallons").value = document.getElementById("gallons2").value;
+var x=75;
+alert("<%= user.state2 %>");
+// document.getElementById("SuggestedPrice").placeholder = "Will be calculated" ;
+// document.getElementById("TotalAmountDue").value = "Will be calculated" ;
+ 
+document.getElementById('address2').style="height:100%;";
+document.getElementById('address1').style="display:none";
+document.getElementById('check').value="address1";
+
+
+//document.getElementById('header').style="display:none";
+}
+function address1 () {
+document.getElementById("gallons").placeholder = 0;
+document.getElementById('address2').style="display:none;";
+document.getElementById('address1').style="display:block;";
+document.getElementById('check').value="address2";
+
+//document.getElementById('header').style="display:none";
+}
+
+
 
 </script>
  
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"> 
-	 </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
 
-  </body>
+</script>
+
+
+</body>
+
 </html>
