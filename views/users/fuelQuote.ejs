@@ -51,9 +51,7 @@
 	</div>	
 	
 	
-	
-	
-	
+
 			<div class="boxx" id="address2">
 				<form action="/users/<%= user._id %>?_method=PUT" method="POST">
 					<strong>Address2:</strong>
@@ -65,9 +63,9 @@
 					  <label for="DeliveryAdress">Delivery Address</label>
 					  <textarea class="form-control" placeholder="street, zip city, state" readonly><%= user.street2 %></textarea>
 				  </div>
-				  <label for="date">Delivery Date:</label>
+				  <label for="date2">Delivery Date:</label>
 				  <p>
-					 <input type="date" id="date" name="user[date2]">
+					 <input type="date" id="date2" name="user[date2]">
 				  </p>
 
 				  <div class="form-group">
@@ -205,6 +203,7 @@ if(mm<10){
 
 today = yyyy+'-'+mm+'-'+dd;
 document.getElementById("date").setAttribute("min", today);
+document.getElementById("date2").setAttribute("min", today);
 	
 	
 
