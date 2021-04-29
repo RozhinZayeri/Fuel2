@@ -20,21 +20,18 @@
         <label for="fullname">FullName</label>
         <input class="form-control" type="text" name="user[fullname]" value="<%= user.fullname %>" autocomplete="off" required />
       </div>
-      <!-- <div class="form-group">
-        <label for="email">Email</label>
-        <input class="form-control" type="email" name="user[email]" value="<%= user.email %>" autocomplete="off" required />
-      </div> -->
+      
 		<h5>
 			ADDRESS 1 (Required)
 		</h5>
 	  <div class="mb-3">
 		<label class="form-label" for="street">Street</label>
-		<input class="form-control" type="textbox" maxlength="100"  id="address1" name="user[street]" placeholder="street" required>
+		<input class="form-control" type="textbox" maxlength="100"  id="address1" name="user[street]" value ="<%= user.street %>" placeholder="Street" required>
 		</div>
 		
 	 <div class="mb-3">
 		<label class="form-label" for="city">City:</label>
-	    <input class="form-control" type="text" maxlength="100" id="city" name="user[city]" placeholder="City" value="city" required>
+	    <input class="form-control" type="text" maxlength="100" id="city" name="user[city]" placeholder="City" value="<%= user.city %>" required>
 	</div>
 	<div id="validation-message"></div>	
 		
@@ -97,7 +94,8 @@
 						<div id="validation-message"></div>	
 				<div class="mb-3">
 					<label class="form-label" for="zipcode">ZipCode:</label>
-					<input class="form-control" maxlength="9" minlength="5" name="user[zipcode]" placeholder="ZipCode" value="zipcode" required>
+					<!-- <input class="form-control" maxlength="9" minlength="5" name="user[zipcode]" placeholder="ZipCode" value="zipcode" required> -->
+					<input class="form-control" maxlength="9" minlength="5" name="user[zipcode]" placeholder="ZipCode" value="<%= user.zipcode %>" required>
 				</div>
 				<div id="validation-message"></div>
 			<h5> 
@@ -105,12 +103,12 @@
 		</h5>
 	  <div class="mb-3">
 		<label class="form-label" for="street2">Street</label>
-		<input class="form-control" type="textbox" maxlength="100"  id="street2" name="user[street2]" placeholder="street" >
+		<input class="form-control" type="textbox" maxlength="100"  id="street2" name="user[street2]" placeholder="Street2" value="<%= user.street2 %>">
 		</div>
 		
 	 <div class="mb-3">
 		<label class="form-label" for="city2">City:</label>
-	    <input class="form-control" type="text" maxlength="100" id="city" name="user[city2]" placeholder="City" value="city" >
+	    <input class="form-control" type="text" maxlength="100" id="city" name="user[city2]" placeholder="City2" value="<%= user.city2 %>">
 	</div>
 	 <div id="validation-message"></div>	
 		
@@ -174,7 +172,7 @@
 				<div class="mb-3">
 					<label class="form-label" for="zipcode2">ZipCode:</label>
 					<!-- <input class="form-control" type="number" maxlength="9" minlength="5" id="number" name="user[zipcode2]" placeholder="ZipCode" value="zipcode" > -->
-					<input class="form-control" maxlength="9" minlength="5" name="user[zipcode2]" placeholder="ZipCode" value="zipcode" >
+					<input class="form-control" maxlength="9" minlength="5" name="user[zipcode2]" placeholder="ZipCode" value="<%= user.zipcode2 %>" >
 				</div>
 				<div id="validation-message"></div>
 		

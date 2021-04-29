@@ -45,14 +45,16 @@
  		<form id="form" onsubmit="return false;">
 		  <div id="quote"></div> 
 	     <input class="btn btn-success" type="submit" value="Get Quote" onclick="getQuote();">				
-		 <input class="button" type="button" value="Address2 &nbsp;" onclick="address2()">
+		 <!-- <input class="button" type="button" value="Address2 &nbsp;" onclick="address2()"> -->
 </form>
 			</div>
 	</div>	
 	
-	
+		</div>
+		</main>
+		
 
-			<div class="boxx" id="address2">
+			<!-- <div class="boxx" id="address2">
 				<form action="/users/<%= user._id %>?_method=PUT" method="POST">
 					<strong>Address2:</strong>
 				  <div class="form-group">
@@ -88,8 +90,9 @@
 			</form>
 				</div>
 			</div>
-		</div>
-	</main>
+		</div> -->
+	<!-- </main> -->
+	
 <script>
 		
 var margin = 0;	 
@@ -103,7 +106,6 @@ function getMargin() {
 		margin = .04;
 	
 	//*** I tried to add another if statement for address 2 but it doesnt wrork and it breaks the first one as well. *****
-	
 	
 		 
 	// if previous customer
@@ -124,9 +126,6 @@ function getMargin() {
 function getQuote() {
 
 var requestedGallons = parseInt(document.getElementById("gallons").value);
-if(isNaN(requestedGallons)) {
-   requestedGallons = parseInt(document.getElementById("gallons2").value);
-  }
 
   var box1 = document.getElementById("quote");
 	
@@ -136,11 +135,22 @@ if(isNaN(requestedGallons)) {
 	
   if(box1.style.display == "none")
     box1.style.display = "block";
-
-  if(isNaN(requestedGallons)) {
-    box1.innerText = "hello? real number pls."
-    return;
+  
+  
+if(isNaN(requestedGallons)) {
+     box1.innerText = "hello? real number pls.";
+     return;
   }
+  else if(requestedGallons < 0)
+   { box1.innerText = "invalid entry" // if gas less than 0 say "invalid entry and return
+	document.getElementById("TotalAmountDue").placeholder = "INVALID ENTRY";
+	document.getElementById("TotalAmountDue").value = "INVALID ENTRY";
+	document.getElementById("SuggestedPrice").placeholder = "INVALID ENTRY";
+	document.getElementById("SuggestedPrice").value = "INVALID ENTRY";
+    return;}
+else 
+	box1.innerText = " ";
+	
 	
   // box1.innerText = "Total Amount Due: $" + (parseInt(requestedGallons) * suggestedPrice).toFixed(2);
   document.getElementById("TotalAmountDue").placeholder = "Total Amount Due: $" + (parseInt(requestedGallons) * suggestedPrice).toFixed(2);
@@ -156,7 +166,6 @@ if(isNaN(requestedGallons)) {
 }		
 		
 		
-	
 	
 	function load () {
 		document.getElementById('address2').style="display:none;";
